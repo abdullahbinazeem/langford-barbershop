@@ -19,7 +19,7 @@ const Hero = () => {
               Langford’s{" "}
               <span className="text-red-600 font-black">
                 Trusted
-                <br className="hidden xs:block" /> Barber{" "}
+                <br className="hidden  sm:block" /> Barber{" "}
               </span>
               Since 2012
             </h1>
