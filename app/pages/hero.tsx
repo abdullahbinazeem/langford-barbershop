@@ -6,6 +6,7 @@ const Hero = () => {
     <div className="relative bg-black">
       <Container className="h-[100vh]">
         <video
+          preload="none"
           src="/assets/hero.mp4"
           autoPlay
           muted
