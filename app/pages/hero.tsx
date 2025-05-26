@@ -19,8 +19,7 @@ const Hero = () => {
               Langford’s{" "}
               <span className="text-red-600 font-black">
                 Trusted
-                <br />
-                Barber{" "}
+                <br className="hidden xs:block" /> Barber{" "}
               </span>
               Since 2012
             </h1>
@@ -32,7 +31,7 @@ const Hero = () => {
             </p>
             <div className="flex gap-6 mt-4 items-center">
               <a className="py-2 px-4 bg-red-600 font-semibold rounded-xs md:text-lg hover:scale-105 transition-all cursor-pointer">
-                Service Pricing
+                Pricing
               </a>
               <a className="font-semibold md:text-lg hover:scale-105 transition-all cursor-pointer underline underline-offset-2">
                 View Photos
