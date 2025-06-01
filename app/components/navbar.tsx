@@ -54,9 +54,9 @@ const Navbar = () => {
           {routes.map((route) => (
             <div className="group relative" key={route.name}>
               {pathname === route.route ? (
-                <div className="h-3 w-full absolute -top-10 left-0 bg-red-600" />
+                <div className="h-3 w-full absolute -top-10 left-0 bg-[#F5A623]" />
               ) : null}
-              <div className="h-3 w-full absolute -top-10 left-0 bg-red-600 opacity-0 group-hover:opacity-100 transition-all" />
+              <div className="h-3 w-full absolute -top-10 left-0 bg-[#F5A623] opacity-0 group-hover:opacity-100 transition-all" />
 
               <a
                 href={route.route}
@@ -97,7 +97,7 @@ const Navbar = () => {
               key={route.name}
               href={route.route}
               className={`uppercase font-semibold ${
-                pathname === route.route ? "text-red-600" : ""
+                pathname === route.route ? "text-[##F5A623]" : ""
               }`}
               onClick={() => setSidebarOpen(false)}
             >
