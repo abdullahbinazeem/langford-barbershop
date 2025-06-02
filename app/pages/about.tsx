@@ -9,7 +9,7 @@ type Props = {};
 
 const About = (props: Props) => {
   return (
-    <div className="bg-neutral-900 text-white pt-20 pb-50">
+    <div className="bg-neutral-900 text-white py-20">
       <Container className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Text Section */}
         <div className="space-y-10">
@@ -59,7 +59,7 @@ const About = (props: Props) => {
         </div>
 
         {/* Image Section */}
-        <div className="relative w-full h-full">
+        <div className="relative max-w-[600px] m-auto w-full aspect-[8/9]">
           {/* Top-left image */}
           <div className="absolute top-0 left-0 w-[60%] aspect-[4/5]">
             <Image
