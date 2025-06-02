@@ -9,7 +9,7 @@ type Props = {};
 
 const About = (props: Props) => {
   return (
-    <div className="bg-neutral-900 text-white py-20">
+    <div className="bg-neutral-900 text-white pt-20 pb-50">
       <Container className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Text Section */}
         <div className="space-y-10">
@@ -59,9 +59,26 @@ const About = (props: Props) => {
         </div>
 
         {/* Image Section */}
-        <div className="w-full h-full bg-neutral-800 rounded-2xl flex items-center justify-center text-neutral-500 text-xl">
-          {/* Replace with actual images or carousel later */}
-          Gallery / Images Placeholder
+        <div className="relative w-full h-full">
+          {/* Top-left image */}
+          <div className="absolute top-0 left-0 w-[60%] aspect-[4/5]">
+            <Image
+              src="/assets/images/about/1.jpg"
+              alt="Tattoo image 1"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          {/* Bottom-right image with slight overlap */}
+          <div className="absolute top-[30%] left-[40%] w-[60%] aspect-[4/5] transform scale-x-[-1]">
+            <Image
+              src="/assets/images/about/2.jpg"
+              alt="Tattoo image 1"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
       </Container>
     </div>
