@@ -109,7 +109,7 @@ const Navbar = () => {
       <div
         className={cn(
           "bg-black w-full h-full transition-all fixed top-0 left-0 ",
-          sidebarOpen ? "opacity-70 z-[10]" : "opacity-0 z-[-1]"
+          sidebarOpen ? "opacity-70 z-[10]" : "opacity-0 z-[-1] hidden"
         )}
       />
     </div>

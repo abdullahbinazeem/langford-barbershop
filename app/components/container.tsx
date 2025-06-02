@@ -12,7 +12,7 @@ const Container = ({
 }) => {
   return (
     <div
-      className={cn("max-w-screen-xl container m-auto lg:px-0 px-4", className)}
+      className={cn("max-w-screen-xl container m-auto lg:px-4 px-4", className)}
     >
       {children}
     </div>
