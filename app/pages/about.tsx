@@ -14,7 +14,7 @@ const About = (props: Props) => {
         {/* Text Section */}
         <div className="space-y-10">
           <div className="space-y-4">
-            <h1 className="text-primary uppercase font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight">
+            <h1 className="text-primary uppercase font-black text-3xl sm:text-4xl lg:text-5xl leading-tight">
               Why Choose Us
             </h1>
             <p className="text-neutral-300 text-base md:text-lg leading-relaxed max-w-xl">
@@ -30,7 +30,7 @@ const About = (props: Props) => {
               <Image src={BarberIcon} alt="Barber Icon" fill />
             </div>
             <div className="space-y-1">
-              <h2 className="text-primary uppercase font-semibold text-xl lg:text-2xl">
+              <h2 className="text-primary uppercase font-black text-xl lg:text-2xl">
                 Professional Barbers
               </h2>
               <p className="text-neutral-300 leading-relaxed">
@@ -46,7 +46,7 @@ const About = (props: Props) => {
               <Image src={RazorIcon} alt="Razor Icon" fill />
             </div>
             <div className="space-y-1">
-              <h2 className="text-primary uppercase font-semibold text-xl lg:text-2xl">
+              <h2 className="text-primary uppercase font-black text-xl lg:text-2xl">
                 Any Cut, Any Style
               </h2>
               <p className="text-neutral-300 leading-relaxed">
@@ -61,9 +61,9 @@ const About = (props: Props) => {
         {/* Image Section */}
         <div className="relative max-w-[600px] m-auto w-full aspect-[8/9]">
           {/* Top-left image */}
-          <div className="absolute top-0 left-0 w-[60%] aspect-[4/5]">
+          <div className="absolute top-0 left-0 w-[60%] aspect-[4/5] rounded-lg overflow-hidden">
             <Image
-              src="/assets/images/about/1.jpg"
+              src="/assets/images/about/1.jpeg"
               alt="Tattoo image 1"
               fill
               className="object-cover"
@@ -71,9 +71,9 @@ const About = (props: Props) => {
           </div>
 
           {/* Bottom-right image with slight overlap */}
-          <div className="absolute top-[30%] left-[40%] w-[60%] aspect-[4/5] transform scale-x-[-1]">
+          <div className="absolute top-[30%] left-[40%] w-[60%] aspect-[4/5] transform scale-x-[-1] rounded-lg overflow-hidden">
             <Image
-              src="/assets/images/about/2.jpg"
+              src="/assets/images/about/2.jpeg"
               alt="Tattoo image 1"
               fill
               className="object-cover"

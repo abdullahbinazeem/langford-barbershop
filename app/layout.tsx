@@ -1,13 +1,19 @@
 import type { Metadata } from "next";
-import { Abril_Fatface, Bebas_Neue, Oswald, Poppins } from "next/font/google";
+import {
+  Abril_Fatface,
+  Barlow,
+  Bebas_Neue,
+  Oswald,
+  Poppins,
+} from "next/font/google";
 import "./globals.css";
 
 import Navbar from "./components/navbar";
 
-const poppins = Oswald({
+const poppins = Barlow({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700"],
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {

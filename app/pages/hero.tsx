@@ -16,9 +16,9 @@ const Hero = () => {
         />
         <div className="relative h-full grid items-center text-white z-[2] ">
           <div className="flex flex-col gap-4">
-            <h1 className="tracking-tight uppercase font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[120%]">
+            <h1 className="tracking-tight uppercase font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[120%]">
               Langford’s{" "}
-              <span className="text-[#F5A623] font-black">
+              <span className="text-[#F5A623]">
                 Trusted
                 <br className="hidden  sm:block" /> Barber{" "}
               </span>
