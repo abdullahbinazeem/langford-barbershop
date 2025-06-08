@@ -6,6 +6,7 @@ import Container from "../components/container";
 import ScissorIcon from "@/public/assets/icons/scissor.svg";
 import CleaningIcon from "@/public/assets/icons/cleaning.svg";
 import BeardIcon from "@/public/assets/icons/beard.svg";
+import Link from "next/link";
 
 const services = [
   {
@@ -14,13 +15,15 @@ const services = [
       "Choose from classic to modern cuts—our stylists customize each look to suit your face shape and personal style.",
     price: "$30",
     icon: ScissorIcon,
+    link: "#pricing",
   },
   {
-    title: "Beard Trimming",
+    title: "Grooming",
     description:
       "Expert shaping and detailing to keep your beard looking sharp—includes precision edge-ups and fade blending for a flawless finish.",
-    price: "$15",
+    price: "$20",
     icon: BeardIcon,
+    link: "#pricing",
   },
   {
     title: "Hair Washing",
@@ -28,6 +31,7 @@ const services = [
       "Relax under a soothing shampoo and scalp massage—deep-cleanse, hydrate, and revitalize your hair with premium products.",
     price: "$15",
     icon: CleaningIcon,
+    link: "#pricing",
   },
 ];
 
@@ -47,24 +51,27 @@ const Services = () => {
         <div className="sm:grid flex items-center flex-col sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {services.map((service, index) => (
             <div
-              className="h-full max-w-sm sm:max-w-none py-8 px-6 border border-neutral-700 hover:scale-105 transition-all cursor-pointer rounded-sm bg-neutral-800 flex"
+              className="h-full group items-stretch max-w-sm sm:max-w-none py-10 px-8 border cursor-pointer border-neutral-700 rounded-sm bg-neutral-800 flex"
               key={index}
             >
-              <div className="text-center flex flex-col items-center gap-2 md:gap-4">
+              <Link
+                href={service.link}
+                className="text-center flex flex-col items-center gap-2 md:gap-4 group-hover:scale-110 transition-all "
+              >
                 <div className="w-12 sm:w-16 lg:w-20 aspect-square relative flex-shrink-0">
                   <Image src={service.icon} alt="Scissor Icon" fill />
                 </div>
                 <h2 className="text-2xl md:text-3xl font-black uppercase text-primary">
                   {service.title}
                 </h2>
-                <p className="text-neutral-300">{service.description}</p>
-                <div className="mt-2">
+                <p className="text-neutral-300 mb-2">{service.description}</p>
+                <div className="mt-auto">
                   <p className="text-neutral-500">Starting from</p>
                   <span className="font-black text=xl md:text-2xl">
                     {service.price}
                   </span>
                 </div>
-              </div>
+              </Link>
             </div>
           ))}
         </div>
