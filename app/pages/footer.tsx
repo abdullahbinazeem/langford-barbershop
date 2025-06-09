@@ -9,9 +9,7 @@ const Footer = () => {
       <Container>
         <div className="px-6 py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:place-items-center ">
-            {/* Logo and Description */}
             <div className="md:col-span-1">
-              {/* The logo is text-based as in the image */}
               <img
                 src="/assets/logo.png"
                 alt="Langford Barber Shop Logo"
@@ -24,7 +22,6 @@ const Footer = () => {
               </p>
             </div>
 
-            {/* Contact Us */}
             <div className="font-bold">
               <h3 className="text-xl font-bold text-primary mb-4">
                 Contact us
@@ -37,7 +34,6 @@ const Footer = () => {
               </p>
             </div>
 
-            {/* Open Hours */}
             <div className="font-bold">
               <h3 className="text-xl font-bold text-primary mb-4">
                 Open Hours
@@ -49,7 +45,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="border-t border-neutral-400 mt-8">
           <div className="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center text-sm">
             <p className="text-neutral-400 text-center md:text-left mb-4 md:mb-0">

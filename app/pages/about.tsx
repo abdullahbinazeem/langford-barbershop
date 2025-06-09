@@ -11,7 +11,6 @@ const About = (props: Props) => {
   return (
     <div className="bg-neutral-900 text-white py-20">
       <Container className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        {/* Text Section */}
         <div className="space-y-10">
           <div className="space-y-4">
             <h1 className="text-primary uppercase font-black text-3xl sm:text-4xl lg:text-5xl leading-tight">
@@ -24,7 +23,6 @@ const About = (props: Props) => {
             </p>
           </div>
 
-          {/* Feature 1 */}
           <div className="flex items-center gap-6">
             <div className="w-10 sm:w-12 lg:w-16 aspect-square relative flex-shrink-0">
               <Image src={BarberIcon} alt="Barber Icon" fill />
@@ -40,7 +38,6 @@ const About = (props: Props) => {
             </div>
           </div>
 
-          {/* Feature 2 */}
           <div className="flex items-center gap-6">
             <div className="w-10 sm:w-12 lg:w-16 aspect-square relative flex-shrink-0">
               <Image src={RazorIcon} alt="Razor Icon" fill />
@@ -58,9 +55,7 @@ const About = (props: Props) => {
           </div>
         </div>
 
-        {/* Image Section */}
         <div className="relative max-w-[600px] m-auto w-full aspect-[8/9]">
-          {/* Top-left image */}
           <div className="absolute top-0 left-0 w-[60%] aspect-[4/5] rounded-lg overflow-hidden">
             <Image
               src="/assets/images/about/1.jpeg"
@@ -70,7 +65,6 @@ const About = (props: Props) => {
             />
           </div>
 
-          {/* Bottom-right image with slight overlap */}
           <div className="absolute top-[30%] left-[40%] w-[60%] aspect-[4/5] transform scale-x-[-1] rounded-lg overflow-hidden">
             <Image
               src="/assets/images/about/2.jpeg"
