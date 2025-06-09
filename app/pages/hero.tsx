@@ -1,5 +1,6 @@
 import React from "react";
 import Container from "../components/container";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -31,9 +32,12 @@ const Hero = () => {
               </span>
             </p>
             <div className="flex gap-6 mt-4 items-center">
-              <a className="py-2 px-4 bg-[#F5A623] font-semibold rounded-xs md:text-lg hover:scale-105 transition-all cursor-pointer">
+              <Link
+                href="#pricing"
+                className="py-2 px-4 bg-[#F5A623] font-semibold rounded-xs md:text-lg hover:scale-105 transition-all cursor-pointer"
+              >
                 Pricing
-              </a>
+              </Link>
               <a className="font-semibold md:text-lg hover:scale-105 transition-all cursor-pointer underline underline-offset-2">
                 View Photos
               </a>

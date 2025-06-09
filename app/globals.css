@@ -17,6 +17,10 @@ p {
   color: #f5a623;
 }
 
+.bg-primary {
+  background-color: #f5a623;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;

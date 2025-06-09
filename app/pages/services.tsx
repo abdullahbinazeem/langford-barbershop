@@ -23,7 +23,7 @@ const services = [
       "Expert shaping and detailing to keep your beard looking sharp—includes precision edge-ups and fade blending for a flawless finish.",
     price: "$20",
     icon: BeardIcon,
-    link: "#pricing",
+    link: "#groom",
   },
   {
     title: "Hair Washing",
@@ -31,7 +31,7 @@ const services = [
       "Relax under a soothing shampoo and scalp massage—deep-cleanse, hydrate, and revitalize your hair with premium products.",
     price: "$15",
     icon: CleaningIcon,
-    link: "#pricing",
+    link: "#wash",
   },
 ];
 

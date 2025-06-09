@@ -14,6 +14,7 @@ const PricingItems = [
       "Different haircut styles are available to accommodate all types of people and preferences.",
     price: 33,
     icon: ScissorIcon,
+    id: "haircut",
   },
   {
     title: "Fade",
@@ -49,6 +50,7 @@ const PricingItems = [
       "Different haircut styles are available to accommodate all types of people and preferences.",
     price: 20,
     icon: BeardIcon,
+    id: "groom",
   },
   {
     title: "Hot Towel Shave",
@@ -70,6 +72,7 @@ const PricingItems = [
       "Different haircut styles are available to accommodate all types of people and preferences.",
     price: 15,
     icon: CleaningIcon,
+    id: "wash",
   },
 ];
 
@@ -82,7 +85,7 @@ const Pricing = () => {
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 max-w-sm sm:max-w-5xl mx-auto gap-12 gap-x-20 mt-12">
           {PricingItems.map((item, index) => (
-            <div key={index}>
+            <div key={index} id={item.id ? item.id : undefined}>
               <div className="flex relative justify-between">
                 <div className="flex items-center gap-4">
                   <div className="w-5 sm:w-6 lg:w-8 aspect-square relative flex-shrink-0">

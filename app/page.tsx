@@ -2,6 +2,8 @@ import Hero from "./pages/hero";
 import About from "./pages/about";
 import Services from "./pages/services";
 import Pricing from "./pages/pricing";
+import Directions from "./pages/directions";
+import Footer from "./pages/footer";
 
 export default function Home() {
   return (
@@ -10,6 +12,8 @@ export default function Home() {
       <About />
       <Services />
       <Pricing />
+      <Directions />
+      <Footer />
     </div>
   );
 }
