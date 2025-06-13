@@ -99,10 +99,10 @@ const About = () => {
     const commitmentObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => setCommitmentVisible(true), 500);
+          setCommitmentVisible(true);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
     if (titleRef.current) titleObserver.observe(titleRef.current);
