@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { Scissors, Award, Star, Sparkles } from "lucide-react";
+import Image from "next/image";
 import Container from "../components/container";
 
 const FeatureCard = ({ imageSrc, title, description, index }: any) => {
@@ -41,15 +42,18 @@ const FeatureCard = ({ imageSrc, title, description, index }: any) => {
         }`}
       >
         <div
-          className={`absolute inset-1 bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 rounded-2xl transition-all duration-500 ${
+          className={`absolute inset bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 rounded-2xl transition-all duration-500 ${
             isHovered
               ? "blur-md opacity-80 scale-110"
               : "blur-sm opacity-60 scale-100"
           }`}
         />
         <div className="absolute inset-1 bg-neutral-800 rounded-xl flex items-center justify-center border border-neutral-700 ">
-          <img
+          <Image
             src={imageSrc}
+            alt="Icon"
+            width={40} // Corresponds to lg:w-10
+            height={40}
             className={`w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 object-contain transition-all duration-300 ${
               isHovered ? "scale-110" : "scale-100"
             }`}
