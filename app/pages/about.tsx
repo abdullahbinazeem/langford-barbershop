@@ -1,77 +1,209 @@
-import Image from "next/image";
-import React from "react";
+"use client";
+
+import React, { useState, useEffect, useRef } from "react";
+import { Scissors, Award, Star, Sparkles } from "lucide-react";
 import Container from "../components/container";
 
-import BarberIcon from "@/public/assets/icons/barber.svg";
-import RazorIcon from "@/public/assets/icons/razor.svg";
+const FeatureCard = ({ imageSrc, title, description, index }: any) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const cardRef = useRef(null);
 
-type Props = {};
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setIsVisible(true), index * 200);
+        }
+      },
+      { threshold: 0.3 }
+    );
 
-const About = (props: Props) => {
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [index]);
+
   return (
-    <div className="bg-neutral-900 text-white py-20">
-      <Container className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div className="space-y-10">
-          <div className="space-y-4">
-            <h1 className="text-primary uppercase font-black text-3xl sm:text-4xl lg:text-5xl leading-tight">
-              Why Choose Us
-            </h1>
-            <p className="text-neutral-300 text-base md:text-lg leading-relaxed max-w-xl">
+    <div
+      ref={cardRef}
+      className={`flex items-center gap-6 transition-all duration-700 transform ${
+        isVisible ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"
+      } ${isHovered ? "scale-105" : "scale-100"}`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div
+        className={`relative w-14 lg:w-20 aspect-square flex-shrink-0 transition-all duration-500 ${
+          isHovered ? "rotate-12 scale-110" : "rotate-0 scale-100"
+        }`}
+      >
+        <div
+          className={`absolute inset-1 bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 rounded-2xl transition-all duration-500 ${
+            isHovered
+              ? "blur-md opacity-80 scale-110"
+              : "blur-sm opacity-60 scale-100"
+          }`}
+        />
+        <div className="absolute inset-1 bg-neutral-800 rounded-xl flex items-center justify-center border border-neutral-700 ">
+          <img
+            src={imageSrc}
+            className={`w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 object-contain transition-all duration-300 ${
+              isHovered ? "scale-110" : "scale-100"
+            }`}
+          />
+        </div>
+      </div>
+      <div className="space-y-2 flex-1">
+        <h2
+          className={`text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-300 uppercase font-black text-xl lg:text-2xl transition-all duration-300 ${
+            isHovered ? "text-shadow-glow" : ""
+          }`}
+        >
+          {title}
+        </h2>
+        <p
+          className={`text-neutral-300 leading-relaxed transition-colors duration-300 ${
+            isHovered ? "text-white" : ""
+          }`}
+        >
+          {description}
+        </p>
+      </div>
+    </div>
+  );
+};
+
+const About = () => {
+  const [titleVisible, setTitleVisible] = useState(false);
+  const [commitmentVisible, setCommitmentVisible] = useState(false);
+  const titleRef = useRef(null);
+  const commitmentRef = useRef(null);
+
+  useEffect(() => {
+    const titleObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTitleVisible(true);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    const commitmentObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setCommitmentVisible(true), 500);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (titleRef.current) titleObserver.observe(titleRef.current);
+    if (commitmentRef.current)
+      commitmentObserver.observe(commitmentRef.current);
+
+    return () => {
+      titleObserver.disconnect();
+      commitmentObserver.disconnect();
+    };
+  }, []);
+
+  return (
+    <div className="relative bg-neutral-900 text-white py-20 md:px-0 px-4 overflow-hidden">
+      <Container className="relative grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="space-y-12">
+          <div ref={titleRef} className="space-y-6">
+            <div className="relative">
+              <h1
+                className={`text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 uppercase font-black text-3xl sm:text-4xl lg:text-6xl leading-tight transition-all duration-1000 transform ${
+                  titleVisible
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-8 opacity-0"
+                }`}
+              >
+                Why Choose Us
+              </h1>
+            </div>
+            <p
+              className={`text-neutral-300 text-base md:text-lg leading-relaxed max-w-xl transition-all duration-1000 delay-300 transform ${
+                titleVisible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-4 opacity-0"
+              }`}
+            >
               With over 10 years of combined experience, our team is passionate
               about quality grooming and building a space where everyone feels
               welcome.
             </p>
           </div>
 
-          <div className="flex items-center gap-6">
-            <div className="w-10 sm:w-12 lg:w-16 aspect-square relative flex-shrink-0">
-              <Image src={BarberIcon} alt="Barber Icon" fill />
-            </div>
-            <div className="space-y-1">
-              <h2 className="text-primary uppercase font-black text-xl lg:text-2xl">
-                Professional Barbers
-              </h2>
-              <p className="text-neutral-300 leading-relaxed">
-                All of our hairdressers are incredibly experienced and qualified
-                in hair styling services.
-              </p>
-            </div>
-          </div>
+          <div className="space-y-8">
+            <FeatureCard
+              imageSrc="/assets/icons/barber.svg"
+              title="Professional Barbers"
+              description="All of our hairdressers are incredibly experienced and qualified in hair styling services."
+              index={0}
+            />
 
-          <div className="flex items-center gap-6">
-            <div className="w-10 sm:w-12 lg:w-16 aspect-square relative flex-shrink-0">
-              <Image src={RazorIcon} alt="Razor Icon" fill />
-            </div>
-            <div className="space-y-1">
-              <h2 className="text-primary uppercase font-black text-xl lg:text-2xl">
-                Any Cut, Any Style
-              </h2>
-              <p className="text-neutral-300 leading-relaxed">
-                From clean fades to classic trims, we’ve got you covered. Our
-                barbershop delivers fresh, personalized cuts that match your
-                style every time.
-              </p>
-            </div>
+            <FeatureCard
+              imageSrc="/assets/icons/razor.svg"
+              title="Any Cut, Any Style"
+              description="From clean fades to classic trims, we've got you covered. Our barbershop delivers fresh, personalized cuts that match your style every time."
+              index={1}
+            />
           </div>
         </div>
 
-        <div className="relative max-w-[600px] m-auto w-full aspect-[8/9]">
-          <div className="absolute top-0 left-0 w-[60%] aspect-[4/5] rounded-lg overflow-hidden">
-            <Image
-              src="/assets/images/about/1.jpeg"
-              alt="Tattoo image 1"
-              fill
-              className="object-cover"
-            />
-          </div>
+        <div
+          ref={commitmentRef}
+          className={`relative transition-all duration-1000 transform ${
+            commitmentVisible
+              ? "translate-y-0 opacity-100 scale-100"
+              : "translate-y-12 opacity-0 scale-95"
+          }`}
+        >
+          <div className="relative bg-gradient-to-br from-neutral-800/80 to-neutral-900/80 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-neutral-700/50 shadow-2xl">
+            <div className="absolute top-4 right-4">
+              <Sparkles
+                className="w-6 h-6 text-yellow-400 animate-spin"
+                style={{ animationDuration: "3s" }}
+              />
+            </div>
 
-          <div className="absolute top-[30%] left-[40%] w-[60%] aspect-[4/5] transform scale-x-[-1] rounded-lg overflow-hidden">
-            <Image
-              src="/assets/images/about/2.jpeg"
-              alt="Tattoo image 1"
-              fill
-              className="object-cover"
-            />
+            <div className="flex items-center gap-3 mb-6">
+              <Star className="w-8 h-8 text-yellow-400 animate-pulse" />
+              <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400 uppercase font-black text-2xl lg:text-3xl">
+                Our Commitment
+              </h2>
+            </div>
+
+            <p className="text-neutral-300 text-lg leading-relaxed max-w-2xl">
+              We're committed to providing an exceptional experience from the
+              moment you walk through our doors. Whether you're here for a quick
+              trim or a complete style transformation, we guarantee you'll leave
+              feeling confident and looking sharp.
+            </p>
+
+            <div className="mt-8 flex gap-2">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  className={`w-5 h-5 text-yellow-400 transition-all duration-300 delay-${
+                    i * 100
+                  }`}
+                  style={{
+                    animationDelay: `${i * 0.2}s`,
+                    filter: commitmentVisible
+                      ? "drop-shadow(0 0 6px rgb(250 204 21))"
+                      : "none",
+                  }}
+                  fill="currentColor"
+                />
+              ))}
+            </div>
           </div>
         </div>
       </Container>

@@ -4,8 +4,8 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="relative bg-black ">
-      <Container className="h-[100vh]">
+    <div className="relative bg-black overflow-hidden">
+      <Container className="h-[80vh]">
         <video
           preload="none"
           src="/assets/hero-2.mp4"

@@ -78,7 +78,7 @@ const PricingItems = [
 
 const Pricing = () => {
   return (
-    <div className="bg-neutral-900 text-white py-20" id="pricing">
+    <div className="bg-neutral-900 text-white py-20 md:px-0 px-4" id="pricing">
       <Container className="items-center">
         <h1 className="text-center text-primary uppercase font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight">
           Pricing
@@ -98,7 +98,7 @@ const Pricing = () => {
                 <span className="text-xl md:text-2xl font-extrabold">
                   ${item.price}
                 </span>
-                <div className="absolute -bottom-3 left-0 w-full h-[1px] sm:h-0.5 bg-neutral-100 rounded-3xl" />
+                <div className="absolute -bottom-3 left-0 w-full h-[0.5px] sm:h-0.5 bg-neutral-500 rounded-3xl" />
               </div>
               <p className="mt-6 sm:mt-8 text-neutral-300">
                 {item.description}

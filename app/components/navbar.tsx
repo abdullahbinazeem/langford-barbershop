@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import Container from "./container";
+import Link from "next/link";
 
 import { usePathname } from "next/navigation";
 
@@ -23,10 +24,6 @@ const routes = [
     route: "/photos",
   },
   {
-    name: "Reviews",
-    route: "/reviews",
-  },
-  {
     name: "Contact",
     route: "/contact",
   },
@@ -37,17 +34,17 @@ const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className=" bg-neutral-900 shadow-2xl text-white py-6 absolute w-full top-0 z-50">
+    <div className=" bg-neutral-900 shadow-2xl text-white py-6 w-full z-50">
       <Container className="flex items-center justify-between">
         {/* logo item */}
-        <div className="relative w-42 md:w-50 h-auto aspect-[4/1]">
+        <Link href="/" className="relative w-42 md:w-50 h-auto aspect-[4/1]">
           <Image
             src="/assets/logo.png"
             alt="Langford Barbershop Logo"
             fill
             className="object-contain"
           />
-        </div>
+        </Link>
 
         {/* nav items */}
         <div className="hidden md:flex items-center gap-8">
@@ -93,7 +90,7 @@ const Navbar = () => {
         </div>
         <div className="flex flex-col gap-4 p-6">
           {routes.map((route) => (
-            <a
+            <Link
               key={route.name}
               href={route.route}
               className={`uppercase font-semibold ${
@@ -102,7 +99,7 @@ const Navbar = () => {
               onClick={() => setSidebarOpen(false)}
             >
               {route.name}
-            </a>
+            </Link>
           ))}
         </div>
       </div>
