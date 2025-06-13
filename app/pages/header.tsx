@@ -9,11 +9,12 @@ const Header = ({ title }: { title: string }) => {
         <video
           preload="none"
           src="/assets/hero-2.mp4"
+          poster="/assets/hero.jpg"
           autoPlay
           muted
           loop
           playsInline
-          className="absolute z-[1] left-0 top-0 w-full h-full object-cover opacity-50"
+          className="absolute z-[1] left-0 top-0 w-full h-full object-cover opacity-60"
         />
         <div className="relative h-full grid items-center text-white z-[2] ">
           <div className="flex flex-col gap-4">
