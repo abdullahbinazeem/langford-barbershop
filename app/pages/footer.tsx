@@ -5,7 +5,7 @@ import { Facebook, Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-neutral-900 text-white">
+    <footer className="bg-neutral-950 text-white">
       <Container>
         <div className="px-6 py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:place-items-center ">
