@@ -11,7 +11,7 @@ const PricingItems = [
   {
     title: "Haircut",
     description:
-      "Different haircut styles are available to accommodate all types of people and preferences.",
+      "A classic haircut tailored precisely to your style and preferences, ensuring you leave looking sharp and confident.",
     price: 33,
     icon: ScissorIcon,
     id: "haircut",
@@ -19,35 +19,39 @@ const PricingItems = [
   {
     title: "Fade",
     description:
-      "Different haircut styles are available to accommodate all types of people and preferences.",
+      "Expertly blended fade haircut that transitions smoothly from short to long, giving you a fresh and modern look.",
     price: 24,
     icon: ScissorIcon,
+    id: "fade",
   },
   {
     title: "Buzz Cut",
     description:
-      "Different haircut styles are available to accommodate all types of people and preferences.",
+      "A clean, low-maintenance buzz cut perfect for those who prefer a simple yet bold style.",
     price: 27,
     icon: ScissorIcon,
+    id: "buzzcut",
   },
   {
     title: "Senior Cut",
     description:
-      "Different haircut styles are available to accommodate all types of people and preferences.",
+      "Gentle and stylish haircut designed with seniors in mind, providing comfort and a timeless look.",
     price: 27,
     icon: ScissorIcon,
+    id: "seniorcut",
   },
   {
     title: "Kids Cut",
     description:
-      "Different haircut styles are available to accommodate all types of people and preferences.",
+      "A fun and comfortable haircut experience tailored for kids, ensuring they leave happy and looking great.",
     price: 27,
     icon: ScissorIcon,
+    id: "kidscut",
   },
   {
     title: "Beard Trim",
     description:
-      "Different haircut styles are available to accommodate all types of people and preferences.",
+      "Precision beard trimming to shape and maintain your facial hair, keeping you looking well-groomed and polished.",
     price: 20,
     icon: BeardIcon,
     id: "groom",
@@ -55,21 +59,23 @@ const PricingItems = [
   {
     title: "Hot Towel Shave",
     description:
-      "Different haircut styles are available to accommodate all types of people and preferences.",
+      "Indulge in a relaxing hot towel shave that softens the skin and hair for a smooth, clean finish.",
     price: 45,
     icon: BeardIcon,
+    id: "hottowelshave",
   },
   {
     title: "Haircut & Shave",
     description:
-      "Different haircut styles are available to accommodate all types of people and preferences.",
-    price: 45,
+      "A complete grooming package including a stylish haircut and a soothing hot towel shave for an impeccable look.",
+    price: 50,
     icon: BeardIcon,
+    id: "haircutshave",
   },
   {
     title: "Hair Wash",
     description:
-      "Different haircut styles are available to accommodate all types of people and preferences.",
+      "Refreshing hair wash paired with a gentle scalp massage to leave your hair clean and revitalized.",
     price: 15,
     icon: CleaningIcon,
     id: "wash",

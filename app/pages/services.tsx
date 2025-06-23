@@ -13,7 +13,7 @@ const services = [
     title: "Hair Cuts",
     description:
       "Choose from classic to modern cuts—our stylists customize each look to suit your face shape and personal style.",
-    price: "$30",
+    price: "$27",
     icon: ScissorIcon,
     link: "#pricing",
   },

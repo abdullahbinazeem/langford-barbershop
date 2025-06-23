@@ -31,7 +31,7 @@ const Footer = () => {
               </h3>
               <p className="mb-2">Phone: 778-265-1444</p>
               <p>
-                Address: 757 Goldstream Ave
+                Address: 707 Goldstream Ave
                 <br />
                 Victoria, BC V9B 2X4
               </p>
