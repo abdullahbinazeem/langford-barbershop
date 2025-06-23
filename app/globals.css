@@ -8,24 +8,12 @@ p {
   font-family: "Poppins", sans-serif;
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 .text-primary {
-  color: #f5a623;
+  color: #e53935;
 }
 
 .bg-primary {
-  background-color: #f5a623;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  background-color: #e53935;
 }
 
 body {

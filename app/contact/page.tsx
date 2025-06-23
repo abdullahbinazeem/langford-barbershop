@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div>
       <Header title="Contact" />
-      <div className="pt-40 bg-neutral-900">
+      <div className="py-20 bg-neutral-100">
         <Directions />
       </div>
       <Footer />

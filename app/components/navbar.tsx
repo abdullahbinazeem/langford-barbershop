@@ -4,9 +4,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import Container from "./container";
 import Link from "next/link";
-
 import { usePathname } from "next/navigation";
-
 import { Menu, X } from "lucide-react";
 import { cn } from "../utils/cn";
 
@@ -34,7 +32,7 @@ const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className=" bg-neutral-900 shadow-2xl text-white py-6 w-full z-50">
+    <div className="bg-white shadow-2xl text-black py-6 w-full z-50">
       <Container className="flex items-center justify-between">
         {/* logo item */}
         <Link href="/" className="relative w-42 md:w-50 h-auto aspect-[4/1]">
@@ -42,7 +40,7 @@ const Navbar = () => {
             src="/assets/logo.png"
             alt="Langford Barbershop Logo"
             fill
-            className="object-contain"
+            className="object-cover"
           />
         </Link>
 
@@ -51,19 +49,24 @@ const Navbar = () => {
           {routes.map((route) => (
             <div className="group relative" key={route.name}>
               {pathname === route.route ? (
-                <div className="h-3 w-full absolute -top-10 left-0 bg-[#F5A623]" />
+                <div className="h-3 w-full absolute -top-10 left-0 bg-red-500" />
               ) : null}
-              <div className="h-3 w-full absolute -top-10 left-0 bg-[#F5A623] opacity-0 group-hover:opacity-100 transition-all" />
-
+              <div className="h-3 w-full absolute -top-10 left-0 bg-red-500 opacity-0 group-hover:opacity-100 transition-all" />
               <a
                 href={route.route}
-                className="font-bold uppercase cursor-pointer"
+                className={`font-bold uppercase cursor-pointer ${
+                  pathname === route.route
+                    ? "text-red-500"
+                    : "hover:text-blue-500"
+                }`}
               >
                 {route.name}
               </a>
             </div>
           ))}
         </div>
+
+        {/* mobile menu icon */}
         <button
           className="md:hidden cursor-pointer"
           onClick={() => setSidebarOpen(true)}
@@ -75,11 +78,11 @@ const Navbar = () => {
       {/* Mobile Sidebar */}
       <div
         className={cn(
-          "fixed top-0 left-0 w-64 h-screen bg-neutral-800 text-white z-50 shadow-lg transition-transform",
+          "fixed top-0 left-0 w-64 h-screen bg-white text-black z-50 shadow-lg transition-transform",
           sidebarOpen ? "md:-translate-x-full" : "-translate-x-full"
         )}
       >
-        <div className="flex items-center justify-between p-4 border-b border-neutral-700">
+        <div className="flex items-center justify-between p-4 border-b border-neutral-300">
           <span className="font-bold text-lg">Menu</span>
           <button
             onClick={() => setSidebarOpen(false)}
@@ -94,7 +97,9 @@ const Navbar = () => {
               key={route.name}
               href={route.route}
               className={`uppercase font-semibold ${
-                pathname === route.route ? "text-[##F5A623]" : ""
+                pathname === route.route
+                  ? "text-red-500"
+                  : "hover:text-blue-500"
               }`}
               onClick={() => setSidebarOpen(false)}
             >
@@ -103,10 +108,12 @@ const Navbar = () => {
           ))}
         </div>
       </div>
+
+      {/* Mobile Overlay */}
       <div
         className={cn(
-          "bg-black w-full h-full transition-all fixed top-0 left-0 ",
-          sidebarOpen ? "opacity-70 z-[10]" : "opacity-0 z-[-1] hidden"
+          "bg-black w-full h-full fixed top-0 left-0 transition-all duration-300",
+          sidebarOpen ? "opacity-30 z-[10]" : "opacity-0 z-[-1] hidden"
         )}
       />
     </div>

@@ -20,7 +20,7 @@ const Hero = () => {
           <div className="flex flex-col gap-4">
             <h1 className="tracking-tight uppercase font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[120%]">
               Langford’s{" "}
-              <span className="text-[#F5A623]">
+              <span className="text-primary">
                 Trusted
                 <br className="hidden  sm:block" /> Barber{" "}
               </span>
@@ -35,7 +35,7 @@ const Hero = () => {
             <div className="flex gap-6 mt-4 items-center">
               <Link
                 href="#pricing"
-                className="py-2 px-4 bg-[#F5A623] font-semibold rounded-xs md:text-lg hover:scale-105 transition-all cursor-pointer"
+                className="py-2 px-4 bg-primary font-semibold rounded-xs md:text-lg hover:scale-105 transition-all cursor-pointer"
               >
                 Pricing
               </Link>

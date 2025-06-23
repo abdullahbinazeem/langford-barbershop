@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div>
       <Header title="Photos" />
-      <div className="py-20 bg-neutral-900">
+      <div className="py-20 bg-neutral-100">
         <Gallery />
       </div>
       <Footer />

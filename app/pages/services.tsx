@@ -37,37 +37,37 @@ const services = [
 
 const Services = () => {
   return (
-    <div className="bg-neutral-900 text-white py-20 md:px-0 px-4">
+    <div className="bg-white text-black py-20 md:px-0 px-4">
       <Container className="items-center">
-        <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 text-center  uppercase font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight">
+        <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-blue-400 text-center uppercase font-extrabold  text-3xl sm:text-4xl lg:text-6xl leading-tight">
           Our Services
         </h1>
-        <p className="text-center text-neutral-300 text-base lg:text-lg leading-relaxed max-w-4xl mx-auto mt-4">
+        <p className="text-center text-neutral-700 text-base lg:text-lg leading-relaxed max-w-4xl mx-auto mt-4">
           At Langford Barbershop, we offer a wide range of grooming services to
           keep you looking sharp. From classic cuts to modern styles, our
-          experienced barbers are here to provide the perfect look for you.{" "}
+          experienced barbers are here to provide the perfect look for you.
         </p>
 
         <div className="sm:grid flex items-center flex-col sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {services.map((service, index) => (
             <div
-              className="h-full group items-stretch max-w-sm sm:max-w-none py-10 px-8 border cursor-pointer border-neutral-700 rounded-sm bg-neutral-800 flex"
+              className="h-full group items-stretch max-w-sm sm:max-w-none py-10 px-8 border cursor-pointer border-neutral-200 rounded-sm bg-neutral-50 shadow-sm hover:shadow-md transition-shadow duration-300 flex"
               key={index}
             >
               <Link
                 href={service.link}
-                className="text-center flex flex-col items-center gap-2 md:gap-4 group-hover:scale-110 transition-all "
+                className="text-center flex flex-col items-center gap-2 md:gap-4 group-hover:scale-105 transition-all"
               >
                 <div className="w-12 sm:w-16 lg:w-20 aspect-square relative flex-shrink-0">
-                  <Image src={service.icon} alt="Scissor Icon" fill />
+                  <Image src={service.icon} alt="Service Icon" fill />
                 </div>
-                <h2 className="text-2xl md:text-3xl font-black uppercase text-primary">
+                <h2 className="text-2xl md:text-3xl font-black uppercase text-red-500">
                   {service.title}
                 </h2>
-                <p className="text-neutral-300 mb-2">{service.description}</p>
+                <p className="text-neutral-700 mb-2">{service.description}</p>
                 <div className="mt-auto">
                   <p className="text-neutral-500">Starting from</p>
-                  <span className="font-black text=xl md:text-2xl">
+                  <span className="font-black text-xl md:text-2xl text-black">
                     {service.price}
                   </span>
                 </div>

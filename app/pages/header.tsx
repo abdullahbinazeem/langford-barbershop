@@ -19,7 +19,7 @@ const Header = ({ title }: { title: string }) => {
         <div className="relative h-full grid items-center text-white z-[2] ">
           <div className="flex flex-col gap-4">
             <h1 className="tracking-tight uppercase font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[120%]">
-              <span className="text-[#F5A623]"> {title}</span> <br />
+              <span className="text-primary"> {title}</span> <br />
               <span className=" text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                 Langford Barbershop
               </span>
