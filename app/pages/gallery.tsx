@@ -1,91 +1,206 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import { useState } from "react";
 
-type Props = {};
+const BarbershopGallery = () => {
+  const [hoveredItem, setHoveredItem] = useState(null);
 
-const Gallery = (props: Props) => {
+  const handleContactClick = () => {
+    // Handle contact button click
+    console.log("Contact us clicked");
+  };
+
   return (
-    <div className="w-full bg-neutral-900">
-      <div className="grid grid-cols-12 auto-rows-[200px] sm:auto-rows-[250px] lg:auto-rows-[300px] w-full">
-        <div className="col-span-12 sm:col-span-6 lg:col-span-5 row-span-2 group relative overflow-hidden">
-          <Image
-            src="/assets/gallery/1.jpeg"
-            width={800}
-            height={600}
-            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"
-            alt="Featured gallery image"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-            <h3 className="text-white text-xl font-bold mb-2">
-              Featured Image
-            </h3>
-            <p className="text-gray-200 text-sm">Discover your best cut</p>
+    <>
+      <style jsx>{`
+        @keyframes fadeInScale {
+          from {
+            opacity: 0;
+            transform: scale(0.9);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
+        .animate-fade-in-scale {
+          animation: fadeInScale 0.6s ease forwards;
+          opacity: 0;
+        }
+
+        .delay-100 {
+          animation-delay: 0.1s;
+        }
+        .delay-200 {
+          animation-delay: 0.2s;
+        }
+        .delay-300 {
+          animation-delay: 0.3s;
+        }
+        .delay-400 {
+          animation-delay: 0.4s;
+        }
+        .delay-500 {
+          animation-delay: 0.5s;
+        }
+        .delay-600 {
+          animation-delay: 0.6s;
+        }
+
+        .mustache {
+          position: relative;
+          width: 50px;
+          height: 3px;
+          background: #333;
+          margin: 0 auto;
+        }
+
+        .mustache::before {
+          content: "";
+          position: absolute;
+          left: -8px;
+          top: -3px;
+          width: 20px;
+          height: 8px;
+          background: #333;
+          border-radius: 50% 50% 0 50%;
+          transform: rotate(-15deg);
+        }
+
+        .mustache::after {
+          content: "";
+          position: absolute;
+          right: -8px;
+          top: -3px;
+          width: 20px;
+          height: 8px;
+          background: #333;
+          border-radius: 50% 50% 50% 0;
+          transform: rotate(15deg);
+        }
+      `}</style>
+
+      <div className="bg-gray-100 overflow-hidden">
+        <div className="h-[75vh] w-full grid grid-cols-2 md:grid-cols-4 auto-rows-fr gap-0">
+          {/* Left Panel - Large single image */}
+          <div
+            className="relative overflow-hidden cursor-pointer group animate-fade-in-scale delay-100"
+            onMouseEnter={() => setHoveredItem(1)}
+            onMouseLeave={() => setHoveredItem(null)}
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&h=1200&fit=crop&crop=faces&auto=format&q=80"
+              alt="Professional barber cutting hair with precision"
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              sizes="25vw"
+              priority
+            />
+            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-400"></div>
+          </div>
+
+          {/* Center Panel - Content */}
+          <div className="bg-gradient-to-b from-gray-50 to-gray-100 flex flex-col justify-center items-center text-center px-6 md:px-12 py-12 md:py-20 relative animate-fade-in-scale delay-200">
+            <div className="text-[10px] text-primary sm:text-xs tracking-[3px] sm:tracking-[4px] text-amber-700 mb-2 sm:mb-6 uppercase font-medium">
+              APPOINTMENTS
+            </div>
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 sm:mb-4 uppercase tracking-wide leading-tight">
+              BOOK A
+            </h1>
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 sm:mb-8 uppercase tracking-wide leading-tight">
+              CHAIR
+            </h1>
+
+            <p className="text-[10px] sm:text-xs text-gray-600 mb-10 sm:mb-12 uppercase tracking-widest font-medium">
+              THE BEST PLACE FOR A HAIRCUT
+            </p>
+
+            <button
+              onClick={handleContactClick}
+              className="bg-primary text-white px-5 sm:px-6 py-2.5 sm:py-3 text-[10px] sm:text-xs uppercase tracking-[1.5px] sm:tracking-[2px] font-bold transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              CONTACT US NOW
+            </button>
+          </div>
+
+          <div className="grid grid-rows gap-0">
+            {/* Right Panel Column 1 - 2 stacked images */}
+            <div className="grid grid-rows-2 gap-0">
+              {/* Top Right - Barbershop interior */}
+              <div
+                className="relative overflow-hidden cursor-pointer group animate-fade-in-scale delay-300"
+                onMouseEnter={() => setHoveredItem(2)}
+                onMouseLeave={() => setHoveredItem(null)}
+              >
+                <Image
+                  src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=600&h=600&fit=crop&crop=center&auto=format&q=80"
+                  alt="Modern barbershop interior with vintage chairs"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="25vw"
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-400"></div>
+              </div>
+
+              {/* Bottom Right - Child haircut */}
+              <div
+                className="relative overflow-hidden cursor-pointer group animate-fade-in-scale delay-500"
+                onMouseEnter={() => setHoveredItem(4)}
+                onMouseLeave={() => setHoveredItem(null)}
+              >
+                <Image
+                  src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600&h=600&fit=crop&crop=faces&auto=format&q=80"
+                  alt="Professional barber cutting child's hair"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="25vw"
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-400"></div>
+              </div>
+            </div>
+          </div>
+          {/* Right Panel Column 2 - 2 stacked images */}
+          <div className="grid grid-rows-2 gap-0">
+            {/* Top Far Right - Mirror reflection */}
+            <div
+              className="relative overflow-hidden cursor-pointer group animate-fade-in-scale delay-400"
+              onMouseEnter={() => setHoveredItem(3)}
+              onMouseLeave={() => setHoveredItem(null)}
+            >
+              <Image
+                src="/assets/images/about/1.jpeg"
+                alt="Barber working reflected in vintage mirror"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                sizes="25vw"
+              />
+              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-400"></div>
+            </div>
+
+            {/* Bottom Far Right - Beard styling */}
+            <div
+              className="relative overflow-hidden cursor-pointer group animate-fade-in-scale delay-600"
+              onMouseEnter={() => setHoveredItem(5)}
+              onMouseLeave={() => setHoveredItem(null)}
+            >
+              <Image
+                src="https://images.unsplash.com/photo-1493256338651-d82f7acb2b38?w=600&h=600&fit=crop&crop=faces&auto=format&q=80"
+                alt="Professional beard styling and grooming"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                sizes="25vw"
+              />
+              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-400"></div>
+            </div>
           </div>
         </div>
-
-        <div className="col-span-6 sm:col-span-3 lg:col-span-3 row-span-1 group relative overflow-hidden">
-          <Image
-            width={400}
-            height={400}
-            src="/assets/gallery/2.jpeg"
-            className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:brightness-110"
-            alt="Gallery image 2"
-          />
-        </div>
-
-        <div className="col-span-6 sm:col-span-3 lg:col-span-2 group relative overflow-hidden">
-          <Image
-            width={400}
-            height={400}
-            src="/assets/gallery/3.jpeg"
-            className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:saturate-150"
-            alt="Gallery image 3"
-          />
-        </div>
-
-        <div className="col-span-6 sm:col-span-3 lg:col-span-2 group relative overflow-hidden">
-          <Image
-            width={400}
-            height={400}
-            src="/assets/gallery/4.jpeg"
-            className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:hue-rotate-15"
-            alt="Gallery image 4"
-          />
-        </div>
-
-        <div className="col-span-6 sm:col-span-3 lg:col-span-3 row-span-1 group relative overflow-hidden">
-          <Image
-            width={400}
-            height={400}
-            src="/assets/images/about/1.jpeg"
-            className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:brightness-110"
-            alt="Gallery image 2"
-          />
-        </div>
-
-        <div className="col-span-6 sm:col-span-3 lg:col-span-2 group relative overflow-hidden">
-          <Image
-            width={400}
-            height={400}
-            src="/assets/images/about/2.jpeg"
-            className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:saturate-150"
-            alt="Gallery image 3"
-          />
-        </div>
-
-        <div className="col-span-6 sm:col-span-3 lg:col-span-2 group relative overflow-hidden">
-          <Image
-            width={400}
-            height={400}
-            src="/assets/images/about/4.jpeg"
-            className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:hue-rotate-15"
-            alt="Gallery image 4"
-          />
-        </div>
       </div>
-    </div>
+    </>
   );
 };
 
-export default Gallery;
+export default BarbershopGallery;
