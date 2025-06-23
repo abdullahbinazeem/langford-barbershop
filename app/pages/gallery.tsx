@@ -1,15 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const BarbershopGallery = () => {
-  const [hoveredItem, setHoveredItem] = useState(null);
-
-  const handleContactClick = () => {
-    // Handle contact button click
-    console.log("Contact us clicked");
-  };
+  const [hoveredItem, setHoveredItem] = useState<Number | null>(null);
 
   return (
     <>
@@ -119,12 +115,12 @@ const BarbershopGallery = () => {
               THE BEST PLACE FOR A HAIRCUT
             </p>
 
-            <button
-              onClick={handleContactClick}
+            <Link
+              href="tel:778-265-1444"
               className="bg-primary text-white px-5 sm:px-6 py-2.5 sm:py-3 text-[10px] sm:text-xs uppercase tracking-[1.5px] sm:tracking-[2px] font-bold transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
               CONTACT US NOW
-            </button>
+            </Link>
           </div>
 
           <div className="grid grid-rows gap-0">
