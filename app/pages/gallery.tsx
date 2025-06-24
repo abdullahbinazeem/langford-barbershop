@@ -79,7 +79,7 @@ const BarbershopGallery = () => {
       `}</style>
 
       <div className="bg-gray-100 overflow-hidden">
-        <div className="h-[75vh] w-full grid grid-cols-2 md:grid-cols-4 auto-rows-fr gap-0">
+        <div className="md:min-h-[70vh] w-full grid grid-cols-2 md:grid-cols-4 grid-rows-[3fr_4fr] md:grid-rows-[1fr] gap-0">
           {/* Left Panel - Large single image */}
           <div
             className="relative overflow-hidden cursor-pointer group animate-fade-in-scale delay-100"
@@ -87,7 +87,7 @@ const BarbershopGallery = () => {
             onMouseLeave={() => setHoveredItem(null)}
           >
             <Image
-              src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&h=1200&fit=crop&crop=faces&auto=format&q=80"
+              src="/assets/gallery/1.jpeg"
               alt="Professional barber cutting hair with precision"
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -111,7 +111,7 @@ const BarbershopGallery = () => {
               CHAIR
             </h1>
 
-            <p className="text-[10px] sm:text-xs text-gray-600 mb-10 sm:mb-12 uppercase tracking-widest font-medium">
+            <p className="text-[10px] sm:text-xs text-gray-600 mb-6 sm:mb-8 uppercase tracking-widest font-medium">
               THE BEST PLACE FOR A HAIRCUT
             </p>
 
@@ -133,7 +133,7 @@ const BarbershopGallery = () => {
                 onMouseLeave={() => setHoveredItem(null)}
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=600&h=600&fit=crop&crop=center&auto=format&q=80"
+                  src="/assets/gallery/2.jpeg"
                   alt="Modern barbershop interior with vintage chairs"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -149,7 +149,7 @@ const BarbershopGallery = () => {
                 onMouseLeave={() => setHoveredItem(null)}
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600&h=600&fit=crop&crop=faces&auto=format&q=80"
+                  src="/assets/gallery/3.webp"
                   alt="Professional barber cutting child's hair"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -168,7 +168,7 @@ const BarbershopGallery = () => {
               onMouseLeave={() => setHoveredItem(null)}
             >
               <Image
-                src="/assets/images/about/1.jpeg"
+                src="/assets/gallery/4.webp"
                 alt="Barber working reflected in vintage mirror"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -184,7 +184,7 @@ const BarbershopGallery = () => {
               onMouseLeave={() => setHoveredItem(null)}
             >
               <Image
-                src="https://images.unsplash.com/photo-1493256338651-d82f7acb2b38?w=600&h=600&fit=crop&crop=faces&auto=format&q=80"
+                src="/assets/gallery/7.jpeg"
                 alt="Professional beard styling and grooming"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -192,6 +192,38 @@ const BarbershopGallery = () => {
               />
               <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-400"></div>
             </div>
+          </div>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 h-[35vh]">
+          <div className="relative overflow-hidden cursor-pointer group animate-fade-in-scale delay-600">
+            <Image
+              src="/assets/gallery/6.webp"
+              alt="Professional beard styling and grooming"
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              sizes="25vw"
+            />
+            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-400"></div>
+          </div>
+          <div className="relative overflow-hidden cursor-pointer group animate-fade-in-scale  delay-600">
+            <Image
+              src="/assets/gallery/5.webp"
+              alt="Professional beard styling and grooming"
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              sizes="25vw"
+            />
+            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-400"></div>
+          </div>
+          <div className="relative overflow-hidden cursor-pointer group animate-fade-in-scale  delay-600">
+            <Image
+              src="/assets/gallery/8.jpeg"
+              alt="Professional beard styling and grooming"
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              sizes="25vw"
+            />
+            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-400"></div>
           </div>
         </div>
       </div>

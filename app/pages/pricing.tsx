@@ -86,8 +86,8 @@ const Pricing = () => {
   return (
     <div className="bg-white text-black py-20 md:px-0 px-4" id="pricing">
       <Container className="items-center">
-        <h1 className="text-center text-red-500 uppercase font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight">
-          Pricing
+        <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-blue-400 text-center uppercase font-extrabold  text-3xl sm:text-4xl lg:text-6xl leading-tight">
+          Pricings
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 max-w-sm sm:max-w-5xl mx-auto gap-12 gap-x-20 mt-12">
           {PricingItems.map((item, index) => (

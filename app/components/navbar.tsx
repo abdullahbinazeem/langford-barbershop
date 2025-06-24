@@ -18,6 +18,10 @@ const routes = [
     route: "/prices",
   },
   {
+    name: "Photos",
+    route: "/photos",
+  },
+  {
     name: "Contact",
     route: "/contact",
   },
