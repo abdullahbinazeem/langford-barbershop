@@ -79,7 +79,7 @@ const BarbershopGallery = () => {
       `}</style>
 
       <div className="bg-gray-100 overflow-hidden">
-        <div className="min-h-none md:min-h-[70vh] w-full grid sm:grid-cols-2 md:grid-cols-4 grid-rows-[1fr_1fr] sm:grid-rows-[1fr] auto-rows-[2fr] gap-0">
+        <div className="md:min-h-[70vh] w-full grid sm:grid-cols-2 md:grid-cols-4 grid-rows-[1fr_1fr] sm:grid-rows-[1fr] auto-rows-[2fr] gap-0">
           {/* Left Panel - Large single image */}
           <div
             className="relative  overflow-hidden cursor-pointer group animate-fade-in-scale delay-100"
@@ -128,7 +128,7 @@ const BarbershopGallery = () => {
             <div className="grid grid-rows-2 gap-0 auto-rows-fr">
               {/* Top Right - Barbershop interior */}
               <div
-                className="relative aspect-[4/3] sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale delay-300"
+                className="relative sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale delay-300"
                 onMouseEnter={() => setHoveredItem(2)}
                 onMouseLeave={() => setHoveredItem(null)}
               >
@@ -144,7 +144,7 @@ const BarbershopGallery = () => {
 
               {/* Bottom Right - Child haircut */}
               <div
-                className="relative aspect-[4/3] sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale delay-500"
+                className="relative sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale delay-500"
                 onMouseEnter={() => setHoveredItem(4)}
                 onMouseLeave={() => setHoveredItem(null)}
               >
@@ -163,7 +163,7 @@ const BarbershopGallery = () => {
           <div className="grid grid-rows-2 gap-0">
             {/* Top Far Right - Mirror reflection */}
             <div
-              className="relative aspect-[4/3] sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale delay-400"
+              className="relative sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale delay-400"
               onMouseEnter={() => setHoveredItem(3)}
               onMouseLeave={() => setHoveredItem(null)}
             >
@@ -179,7 +179,7 @@ const BarbershopGallery = () => {
 
             {/* Bottom Far Right - Beard styling */}
             <div
-              className="relative aspect-[4/3] sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale delay-600"
+              className="relative sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale delay-600"
               onMouseEnter={() => setHoveredItem(5)}
               onMouseLeave={() => setHoveredItem(null)}
             >
