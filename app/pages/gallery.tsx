@@ -46,7 +46,7 @@ const BarbershopGallery = () => {
         }
 
         .mustache {
-          position: relative aspect-[3/2] sm:aspect-auto;
+          position: relative aspect-[4/3] sm:aspect-auto;
           width: 50px;
           height: 3px;
           background: #333;
@@ -128,7 +128,7 @@ const BarbershopGallery = () => {
             <div className="grid grid-rows-2 gap-0 auto-rows-fr">
               {/* Top Right - Barbershop interior */}
               <div
-                className="relative aspect-[3/2] sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale delay-300"
+                className="relative aspect-[4/3] sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale delay-300"
                 onMouseEnter={() => setHoveredItem(2)}
                 onMouseLeave={() => setHoveredItem(null)}
               >
@@ -144,7 +144,7 @@ const BarbershopGallery = () => {
 
               {/* Bottom Right - Child haircut */}
               <div
-                className="relative aspect-[3/2] sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale delay-500"
+                className="relative aspect-[4/3] sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale delay-500"
                 onMouseEnter={() => setHoveredItem(4)}
                 onMouseLeave={() => setHoveredItem(null)}
               >
@@ -163,7 +163,7 @@ const BarbershopGallery = () => {
           <div className="grid grid-rows-2 gap-0">
             {/* Top Far Right - Mirror reflection */}
             <div
-              className="relative aspect-[3/2] sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale delay-400"
+              className="relative aspect-[4/3] sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale delay-400"
               onMouseEnter={() => setHoveredItem(3)}
               onMouseLeave={() => setHoveredItem(null)}
             >
@@ -179,7 +179,7 @@ const BarbershopGallery = () => {
 
             {/* Bottom Far Right - Beard styling */}
             <div
-              className="relative aspect-[3/2] sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale delay-600"
+              className="relative aspect-[4/3] sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale delay-600"
               onMouseEnter={() => setHoveredItem(5)}
               onMouseLeave={() => setHoveredItem(null)}
             >
@@ -194,8 +194,8 @@ const BarbershopGallery = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 min-h-[50vh] md:min-h-[35vh]">
-          <div className="relative aspect-[3/2] sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale delay-600">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 min-h-[60vh] md:min-h-[40vh]">
+          <div className="relative aspect-[4/3] sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale delay-600">
             <Image
               src="/assets/gallery/6.webp"
               alt="Professional beard styling and grooming"
@@ -205,7 +205,7 @@ const BarbershopGallery = () => {
             />
             <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-400"></div>
           </div>
-          <div className="relative aspect-[3/2] sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale  delay-600">
+          <div className="relative aspect-[4/3] sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale  delay-600">
             <Image
               src="/assets/gallery/5.webp"
               alt="Professional beard styling and grooming"
@@ -215,9 +215,19 @@ const BarbershopGallery = () => {
             />
             <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-400"></div>
           </div>
-          <div className="relative aspect-[3/2] sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale  delay-600">
+          <div className="relative aspect-[4/3] sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale  delay-600">
             <Image
               src="/assets/gallery/8.jpeg"
+              alt="Professional beard styling and grooming"
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              sizes="25vw"
+            />
+            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-400"></div>
+          </div>
+          <div className="relative aspect-[4/3] sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale  delay-600">
+            <Image
+              src="/assets/gallery/9.jpg"
               alt="Professional beard styling and grooming"
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-105"
