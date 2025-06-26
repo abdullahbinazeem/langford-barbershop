@@ -11,7 +11,7 @@ const PricingItems = [
   {
     title: "Haircut",
     description:
-      "A classic haircut tailored precisely to your style and preferences, ensuring you leave looking sharp and confident.",
+      "A classic haircut, styled just how you like it. We focus on the details to make sure you walk out looking sharp and feeling great, with a cut that really suits you.",
     price: 33,
     icon: ScissorIcon,
     id: "haircut",
@@ -19,7 +19,7 @@ const PricingItems = [
   {
     title: "Fade",
     description:
-      "Expertly blended fade haircut that transitions smoothly from short to long, giving you a fresh and modern look.",
+      "Get that perfectly smooth fade, blended seamlessly from short to longer. It's a clean, modern look that'll have you feeling fresh and on point.",
     price: 24,
     icon: ScissorIcon,
     id: "fade",
@@ -27,7 +27,7 @@ const PricingItems = [
   {
     title: "Buzz Cut",
     description:
-      "A clean, low-maintenance buzz cut perfect for those who prefer a simple yet bold style.",
+      "A straightforward, easy-to-manage buzz cut. Great for folks who like a clean, no-fuss style that's bold and always looks good.",
     price: 27,
     icon: ScissorIcon,
     id: "buzzcut",
@@ -35,7 +35,7 @@ const PricingItems = [
   {
     title: "Senior Cut",
     description:
-      "Gentle and stylish haircut designed with seniors in mind, providing comfort and a timeless look.",
+      "A comfortable, easy haircut designed for our senior clients. We take our time to ensure a gentle service that leaves you looking classic and feeling relaxed.",
     price: 27,
     icon: ScissorIcon,
     id: "seniorcut",
@@ -43,7 +43,7 @@ const PricingItems = [
   {
     title: "Kids Cut",
     description:
-      "A fun and comfortable haircut experience tailored for kids, ensuring they leave happy and looking great.",
+      "We make haircuts fun and easy for the little ones! Our barbers are patient and friendly, making sure kids feel comfortable and leave with a cool new look.",
     price: 27,
     icon: ScissorIcon,
     id: "kidscut",
@@ -51,7 +51,7 @@ const PricingItems = [
   {
     title: "Beard Trim",
     description:
-      "Precision beard trimming to shape and maintain your facial hair, keeping you looking well-groomed and polished.",
+      "Give your beard the attention it deserves. We'll shape it up, clean the lines, and make sure it looks well-groomed and complements your face perfectly.",
     price: 20,
     icon: BeardIcon,
     id: "groom",
@@ -59,7 +59,7 @@ const PricingItems = [
   {
     title: "Hot Towel Shave",
     description:
-      "Indulge in a relaxing hot towel shave that softens the skin and hair for a smooth, clean finish.",
+      "Treat yourself to our classic hot towel shave. Warm towels, a close shave, and skin that feels incredibly smooth and refreshed afterward. Pure relaxation.",
     price: 45,
     icon: BeardIcon,
     id: "hottowelshave",
@@ -67,7 +67,7 @@ const PricingItems = [
   {
     title: "Haircut & Shave",
     description:
-      "A complete grooming package including a stylish haircut and a soothing hot towel shave for an impeccable look.",
+      "The full package: a sharp haircut combined with a soothing hot towel shave. It's the ultimate way to refresh your look and feel completely polished.",
     price: 50,
     icon: BeardIcon,
     id: "haircutshave",
@@ -75,7 +75,7 @@ const PricingItems = [
   {
     title: "Hair Wash",
     description:
-      "Refreshing hair wash paired with a gentle scalp massage to leave your hair clean and revitalized.",
+      "A quick refresh for your hair and scalp. Includes a good wash and a relaxing head massage to leave your hair feeling clean and revitalized.",
     price: 15,
     icon: CleaningIcon,
     id: "wash",
@@ -86,7 +86,7 @@ const Pricing = () => {
   return (
     <div className="bg-white text-black py-20 md:px-0 px-4" id="pricing">
       <Container className="items-center">
-        <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-blue-400 text-center uppercase font-extrabold  text-3xl sm:text-4xl lg:text-6xl leading-tight">
+        <h1 className="ml-[50%] translate-x-[-50%] inline-block text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-blue-400  uppercase font-extrabold  text-3xl sm:text-4xl lg:text-6xl leading-tight">
           Pricings
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 max-w-sm sm:max-w-5xl mx-auto gap-12 gap-x-20 mt-12">
@@ -94,7 +94,7 @@ const Pricing = () => {
             <div key={index} id={item.id ? item.id : undefined}>
               <div className="flex relative justify-between">
                 <div className="flex items-center gap-4">
-                  <div className="w-5 sm:w-6 lg:w-8 aspect-square relative flex-shrink-0">
+                  <div className="w-6 lg:w-8 aspect-square relative flex-shrink-0">
                     <Image src={item.icon} alt="Service Icon" fill />
                   </div>
                   <h2 className="text-xl text-red-500 sm:text-2xl font-extrabold uppercase">

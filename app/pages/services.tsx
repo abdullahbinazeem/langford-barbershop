@@ -39,7 +39,7 @@ const Services = () => {
   return (
     <div className="bg-white text-black py-20 md:px-0 px-4">
       <Container className="items-center">
-        <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-blue-400 text-center uppercase font-extrabold  text-3xl sm:text-4xl lg:text-6xl leading-tight">
+        <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-blue-400 ml-[50%] translate-x-[-50%] inline-block uppercase font-extrabold  text-3xl sm:text-4xl lg:text-6xl leading-tight">
           Our Services
         </h1>
         <p className="text-center text-neutral-700 text-base lg:text-lg leading-relaxed max-w-4xl mx-auto mt-4">

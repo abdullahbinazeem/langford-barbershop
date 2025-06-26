@@ -62,7 +62,7 @@ const FeatureCard = ({ imageSrc, title, description, index }: any) => {
       </div>
       <div className="space-y-2 flex-1">
         <h2
-          className={`text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-blue-400 uppercase font-black text-xl lg:text-2xl transition-all duration-300 ${
+          className={`inline-block text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-blue-400 uppercase font-black text-xl lg:text-2xl transition-all duration-300 ${
             isHovered ? "text-shadow-glow" : ""
           }`}
         >
@@ -122,7 +122,7 @@ const About = () => {
           <div ref={titleRef} className="space-y-6">
             <div className="relative">
               <h1
-                className={`text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-blue-400 uppercase font-black text-3xl sm:text-4xl lg:text-6xl leading-tight transition-all duration-1000 transform ${
+                className={`inline-block text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-blue-400 uppercase font-black text-3xl sm:text-4xl lg:text-6xl leading-tight transition-all duration-1000 transform ${
                   titleVisible
                     ? "translate-y-0 opacity-100"
                     : "translate-y-8 opacity-0"

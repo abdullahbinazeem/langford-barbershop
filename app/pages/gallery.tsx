@@ -1,28 +1,76 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
 
 const BarbershopGallery = () => {
-  const [hoveredItem, setHoveredItem] = useState<Number | null>(null);
+  const galleryItems = [
+    {
+      id: 1,
+      src: "/assets/gallery/1.jpeg",
+      alt: "Professional barber cutting hair with precision",
+      title: "Precision Haircuts",
+      description:
+        "Experience expert craftsmanship with every detail. Our skilled barbers meticulously sculpt your hair, ensuring a sharp, refined look that perfectly complements your style and personality.",
+    },
+    {
+      id: 2,
+      src: "/assets/gallery/2.jpeg",
+      alt: "Modern barbershop interior with vintage chairs",
+      title: "Timeless Traditions, Modern Comfort",
+      description:
+        "Step into an authentic barbershop where classic techniques meet contemporary luxury. Enjoy a relaxing hot shave and a refined grooming experience in an atmosphere designed for your ultimate comfort.",
+    },
+    {
+      id: 3,
+      src: "/assets/gallery/3.webp",
+      alt: "Professional barber cutting child's hair",
+      title: "Family Friendly Excellence",
+      description:
+        "From first haircuts to fashionable fades, we cater to clients of all ages. Our friendly and patient barbers provide gentle care, making every visit a positive and stylish experience for our youngest clients.",
+    },
+    {
+      id: 4,
+      src: "/assets/gallery/4.webp",
+      alt: "Barber working reflected in vintage mirror",
+      title: "Your Reflection, Perfected",
+      description:
+        "Witness the transformation unfold. We believe in collaborative styling, ensuring your haircut is exactly as you envisioned, leaving you with a confident and impeccable reflection.",
+    },
+    {
+      id: 6,
+      src: "/assets/gallery/6.webp",
+      alt: "Professional grooming services",
+      title: "Where Style is Crafted",
+      description:
+        "Our dedicated team of professionals creates a welcoming environment where personalized service and exceptional haircuts are the standard.",
+    },
+    {
+      id: 7,
+      src: "/assets/gallery/5.webp",
+      alt: "Skilled barber at work",
+      title: "The Finishing Touch",
+      description:
+        "Our expert barbers use the finest products to enhance your hair's texture and hold, ensuring your sophisticated style lasts long after you leave our chair",
+    },
+  ];
 
   return (
     <>
       <style jsx>{`
-        @keyframes fadeInScale {
+        @keyframes fadeInUp {
           from {
             opacity: 0;
-            transform: scale(0.9);
+            transform: translateY(30px);
           }
           to {
             opacity: 1;
-            transform: scale(1);
+            transform: translateY(0);
           }
         }
 
-        .animate-fade-in-scale {
-          animation: fadeInScale 0.6s ease forwards;
+        .animate-fade-in-up {
+          animation: fadeInUp 0.6s ease forwards;
           opacity: 0;
         }
 
@@ -44,196 +92,49 @@ const BarbershopGallery = () => {
         .delay-600 {
           animation-delay: 0.6s;
         }
-
-        .mustache {
-          position: relative aspect-[4/3] sm:aspect-auto;
-          width: 50px;
-          height: 3px;
-          background: #333;
-          margin: 0 auto;
+        .delay-700 {
+          animation-delay: 0.7s;
         }
-
-        .mustache::before {
-          content: "";
-          position: absolute;
-          left: -8px;
-          top: -3px;
-          width: 20px;
-          height: 8px;
-          background: #333;
-          border-radius: 50% 50% 0 50%;
-          transform: rotate(-15deg);
+        .delay-800 {
+          animation-delay: 0.8s;
         }
-
-        .mustache::after {
-          content: "";
-          position: absolute;
-          right: -8px;
-          top: -3px;
-          width: 20px;
-          height: 8px;
-          background: #333;
-          border-radius: 50% 50% 50% 0;
-          transform: rotate(15deg);
+        .delay-900 {
+          animation-delay: 0.9s;
         }
       `}</style>
 
-      <div className="bg-gray-100 overflow-hidden">
-        <div className="md:min-h-[70vh] w-full grid sm:grid-cols-2 md:grid-cols-4 grid-rows-[1fr_1fr] sm:grid-rows-[1fr] auto-rows-[2fr] gap-0">
-          {/* Left Panel - Large single image */}
-          <div
-            className="relative  overflow-hidden cursor-pointer group animate-fade-in-scale delay-100"
-            onMouseEnter={() => setHoveredItem(1)}
-            onMouseLeave={() => setHoveredItem(null)}
-          >
-            <Image
-              src="/assets/gallery/1.jpeg"
-              alt="Professional barber cutting hair with precision"
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-              sizes="25vw"
-              priority
-            />
-            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-400"></div>
-          </div>
-
-          {/* Center Panel - Content */}
-          <div className="bg-gradient-to-b from-gray-50 to-gray-100 flex flex-col justify-center items-center text-center px-6 md:px-12 py-12 md:py-20 relative animate-fade-in-scale delay-200">
-            <div className="text-[10px] text-primary sm:text-xs tracking-[3px] sm:tracking-[4px] text-amber-700 mb-2 sm:mb-6 uppercase font-medium">
-              APPOINTMENTS
-            </div>
-
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 sm:mb-4 uppercase tracking-wide leading-tight">
-              BOOK A
-            </h1>
-
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 sm:mb-8 uppercase tracking-wide leading-tight">
-              CHAIR
-            </h1>
-
-            <p className="text-[10px] sm:text-xs text-gray-600 mb-6 sm:mb-8 uppercase tracking-widest font-medium">
-              THE BEST PLACE FOR A HAIRCUT
-            </p>
-
-            <Link
-              href="tel:778-265-1444"
-              className="bg-primary text-white px-5 sm:px-6 py-2.5 sm:py-3 text-[10px] sm:text-xs uppercase tracking-[1.5px] sm:tracking-[2px] font-bold transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-            >
-              CONTACT US NOW
-            </Link>
-          </div>
-
-          <div className="grid grid-rows gap-0">
-            {/* Right Panel Column 1 - 2 stacked images */}
-            <div className="grid grid-rows-2 gap-0 auto-rows-fr">
-              {/* Top Right - Barbershop interior */}
+      <div className="py-16 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {galleryItems.map((item, index) => (
               <div
-                className="relative sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale delay-300"
-                onMouseEnter={() => setHoveredItem(2)}
-                onMouseLeave={() => setHoveredItem(null)}
+                key={item.id}
+                className={` overflow-hidden cursor-pointer group animate-fade-in-up delay-${Math.min(
+                  900,
+                  (index + 1) * 100
+                )}`}
               >
-                <Image
-                  src="/assets/gallery/2.jpeg"
-                  alt="Modern barbershop interior with vintage chairs"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="25vw"
-                />
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-400"></div>
-              </div>
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 transition-colors duration-300"></div>
+                </div>
 
-              {/* Bottom Right - Child haircut */}
-              <div
-                className="relative sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale delay-500"
-                onMouseEnter={() => setHoveredItem(4)}
-                onMouseLeave={() => setHoveredItem(null)}
-              >
-                <Image
-                  src="/assets/gallery/3.webp"
-                  alt="Professional barber cutting child's hair"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="25vw"
-                />
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-400"></div>
+                <div className="p-4 sm:p-6">
+                  <h3 className="text-xl font-bold inline-block text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-blue-400 mb-2 transition-colors duration-300">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
               </div>
-            </div>
-          </div>
-          {/* Right Panel Column 2 - 2 stacked images */}
-          <div className="grid grid-rows-2 gap-0">
-            {/* Top Far Right - Mirror reflection */}
-            <div
-              className="relative sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale delay-400"
-              onMouseEnter={() => setHoveredItem(3)}
-              onMouseLeave={() => setHoveredItem(null)}
-            >
-              <Image
-                src="/assets/gallery/4.webp"
-                alt="Barber working reflected in vintage mirror"
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="25vw"
-              />
-              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-400"></div>
-            </div>
-
-            {/* Bottom Far Right - Beard styling */}
-            <div
-              className="relative sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale delay-600"
-              onMouseEnter={() => setHoveredItem(5)}
-              onMouseLeave={() => setHoveredItem(null)}
-            >
-              <Image
-                src="/assets/gallery/7.jpeg"
-                alt="Professional beard styling and grooming"
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="25vw"
-              />
-              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-400"></div>
-            </div>
-          </div>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 min-h-[60vh] md:min-h-[40vh]">
-          <div className="relative aspect-[4/3] sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale delay-600">
-            <Image
-              src="/assets/gallery/6.webp"
-              alt="Professional beard styling and grooming"
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-              sizes="25vw"
-            />
-            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-400"></div>
-          </div>
-          <div className="relative aspect-[4/3] sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale  delay-600">
-            <Image
-              src="/assets/gallery/5.webp"
-              alt="Professional beard styling and grooming"
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-              sizes="25vw"
-            />
-            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-400"></div>
-          </div>
-          <div className="relative aspect-[4/3] sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale  delay-600">
-            <Image
-              src="/assets/gallery/8.jpeg"
-              alt="Professional beard styling and grooming"
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-              sizes="25vw"
-            />
-            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-400"></div>
-          </div>
-          <div className="relative aspect-[4/3] sm:aspect-auto overflow-hidden cursor-pointer group animate-fade-in-scale  delay-600">
-            <Image
-              src="/assets/gallery/9.jpg"
-              alt="Professional beard styling and grooming"
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-              sizes="25vw"
-            />
-            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-400"></div>
+            ))}
           </div>
         </div>
       </div>

@@ -41,9 +41,9 @@ const Footer = () => {
               <h3 className="text-xl font-bold text-red-500 mb-4">
                 Open Hours
               </h3>
-              <p className="mb-2">Open Every Day:</p>
-              <p>9 am - 7 pm</p>
-              <p>7 Days a Week</p>
+              <p className="mb-2">Open Every Day</p>
+              <p>Weekdays: 9 am - 7 pm</p>
+              <p>Weekend: 9 am - 5 pm</p>
             </div>
           </div>
         </div>
