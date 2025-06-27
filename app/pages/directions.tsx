@@ -41,7 +41,7 @@ const Directions = () => {
                 <strong>Monday - Friday:</strong> 9:00 am – 7:00 pm
               </p>
               <p className="md:text-lg">
-                <strong>Sunday - Sunday:</strong> 9:00 am – 5:00 pm
+                <strong>Saturday - Sunday:</strong> 9:00 am – 5:00 pm
               </p>
             </div>
           </div>

@@ -17,14 +17,6 @@ const PricingItems = [
     id: "haircut",
   },
   {
-    title: "Fade",
-    description:
-      "Get that perfectly smooth fade, blended seamlessly from short to longer. It's a clean, modern look that'll have you feeling fresh and on point.",
-    price: 24,
-    icon: ScissorIcon,
-    id: "fade",
-  },
-  {
     title: "Buzz Cut",
     description:
       "A straightforward, easy-to-manage buzz cut. Great for folks who like a clean, no-fuss style that's bold and always looks good.",
